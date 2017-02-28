@@ -1,0 +1,21 @@
+sudo: false
+language: node_js
+node_js:
+  - "6"
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+before_script:
+- npm install -g gulp
+- npm install
+- cd exampleSite
+
+script:
+- "$TRAVIS_BUILD_DIR/bin/hugo version"
+- "$TRAVIS_BUILD_DIR/bin/hugo"
+- gulp min-html --cwd .
