@@ -39,6 +39,34 @@
   </div>
 
 </section>
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+
+    <ul class="pagination">
+        {{ with $paginator.First }}
+        <li class="page-item">
+            <a href="{{ .URL }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        {{ end }}
+        <li {{ if not $paginator.HasPrev }}class="disabled page-item"{{ end }}>
+            <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous" class="page-link"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        {{ range $paginator.Pagers }}
+        <li {{ if eq . $paginator }}class="active page-item"{{ end }}><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
+        {{ end }}
+        <li {{ if not $paginator.HasNext }}class="disabled page-item"{{ end }}>
+            <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next" class="page-link"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        {{ with $paginator.Last }}
+        <li class="page-item">
+            <a href="{{ .URL }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}
+
+
 
 
 
