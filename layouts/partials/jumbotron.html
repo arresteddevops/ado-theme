@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col">
+            <p>
+                {{ .Site.Params.hompage_description | markdownify }}
+              </p>
+        </div>
+
+        {{ with .Site.Params.authors }}
+          {{ range . }}
+            <div class="col-lg-2">
+                <a href="/host/{{ .id }}"><img alt="{{ .name }}" src="/img/{{ .id }}.png" class="img-center rounded-circle img-fluid jumbotron-host"></a>
+                <p class="text-center text-capitalize">{{ .id }}</p>
+            </div>
+          {{ end }}
+        {{ end }}
+
+    </div>
+
+    <div class = "row">
+      <div class = "col-sm subscribe-button">
+					<a class="btn btn-default subscribe-button" href="http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"><i class="fa fa-apple"></i> Subscribe on iTunes</a>
+      </div>
+      <div class = "col-sm subscribe-button">
+        <a class="btn btn-default subscribe-button" href="https://goo.gl/app/playmusic?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Ihj4yege3lfmp3vs5yoopgxijpi?t%3DArrested_DevOps" ><i class="fa fa-music"></i> Subscribe on Google Play Music</a>
+      </div>
+      <div class = "col-sm subscribe-button">
+        <a class="btn btn-default subscribe-button" href="http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"><i class="fa fa-android"></i> Subscribe on Android</a>
+      </div>
+      <div class = "col-sm subscribe-button">
+        <a class="btn btn-default subscribe-button" href="http://feeds.podtrac.com/VGAulpN7MY1U"><i class="fa fa-rss"></i> Subscribe via RSS</a>
+      </div>
+    </div>
+
+</div>
+</div>

@@ -1,4 +1,46 @@
 {{ define "main" }}
 
+{{- partial "jumbotron.html" . }}
+
+<section class="container-fluid episode-list">
+
+
+  <div class = "col episode-list-header">
+    <h2 class = "episode-list-header">All Episodes</h2>
+  </div>
+
+  <div class = "row">
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "episode") }}
+        {{ range $paginator.Pages }}
+        {{ $.Scratch.Set "episode" .File.BaseFileName }}
+          <div class="col-md-4">
+            <div class="episode-image-homepage">
+              <a href="{{ .Permalink }}">
+                {{ if (where (readDir (printf "static/img/episode/")) "Name" ($.Scratch.Get "episode"))}}
+                  {{ if (where (readDir (printf "static/img/episode/%s/" ($.Scratch.Get "episode" ))) "Name" "square.jpg") }}
+                      <img src="/img/episode/{{.File.BaseFileName}}/square.jpg" class="img-fluid" alt="{{ .Title }}" />
+                  {{ else }}
+                    <img src="/episode/img/{{.File.BaseFileName}}.png" class="img-fluid" alt="{{ .Title }}" />
+                  {{ end }}
+                {{ else }}
+                  <img src="/episode/img/{{.File.BaseFileName}}.png" class="img-fluid" alt="{{ .Title }}" />
+                {{ end }}
+
+              </a>
+            </div>
+            <div class="details">
+              {{ title .Title }} (ADO{{ .Params.episode }})
+            </div>
+
+          </div>
+        {{ end }}
+
+
+  </div>
+
+</section>
+
+
+
 
 {{- end -}}

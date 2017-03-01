@@ -1,5 +1,37 @@
 // put custom CSS and SCSS stuff in here
 
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
 .navbar-light {
   background-color: $color4;
+}
+
+.jumbotron-host {
+  margin: auto;
+  display: block;
+}
+
+a.subscribe-button {
+  background-color: $color3;
+  color: $color1;;
+}
+
+div.subscribe-button {
+  margin-top: 10px
+}
+
+.episode-list-header {
+  background-color: $color1;
+  color: $color3;
+}
+div.episode-list-header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h2.episode-list-header {
+  margin-bottom: 0;
 }
