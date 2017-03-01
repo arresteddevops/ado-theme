@@ -1,9 +1,8 @@
 {
-  "name": "my-new-project",
+  "name": "ado-theme",
   "authors": [
-    "John Doe <john@doe.com> (http://johndoe.com)"
+    "Matt Stratton <matt.stratton@gmail.com> (https://www.mattstratton.com)"
   ],
-  "description": "CodeKit automatically generated this file. You should customize it according to: https://github.com/bower/spec/blob/master/json.md",
   "main": [
     "index.html",
     "main.js"
@@ -15,14 +14,11 @@
     "node",
     "yui"
   ],
-  "keywords": [
-    "none"
-  ],
   "license": "MIT",
-  "homepage": "https://google.com",
+  "homepage": "https://github.com/arresteddevops/ado-theme",
   "repository": {
     "type": "git",
-    "url": "git://github.com/foo/bar.git"
+    "url": "git://github.com/arresteddevops/ado-theme.git"
   },
   "ignore": [
     "**/.*",
@@ -32,7 +28,15 @@
     "tests"
   ],
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "4.0.0-alpha.6"
+  },
+  "resolutions": {
+    "bootstrap": "4.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "jssocials": "^1.4.0",
+    "font-awesome": "fortawesome-font-awesome#^4.7.0"
   }
 }

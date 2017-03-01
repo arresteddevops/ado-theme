@@ -7,9 +7,12 @@
 
 <body lang="{{ .Site.Params.Lang }}">
 
+  {{- partial "navigation.html" . }}
 
-  {{- block "main" . }} {{- end -}} <!-- main content -->
+  <div class = "container">
+    {{- block "main" . }} {{- end -}} <!-- main content -->
 
+  </div>
 
   {{- partial "footer.html" . -}}
   {{- partial "footer_scripts.html" . -}}

@@ -15,11 +15,78 @@ paginate = 9
 	about = "/:filename/"
 	episode = "/:filename/"
 
+# The theme supports menus with up to one submenu per menu item
+# The menu name must be "Main"
+# SectionPagesMenu = "Main"
+# About section of menu
+[[Menu.Main]]
+    name = "About"
+    identifier = "about"
+    url = "/about"
+
+[[Menu.Main]]
+    name = "Contact"
+    identifier = "contact"
+    url = "/contact"
+
+[[Menu.Main]]
+    name = "Resources"
+    identifier = "resources"
+    url = "#!"
+
+[[Menu.Main]]
+    name = "Blogs"
+    identifier = "blogs"
+    url = "/blogs"
+    parent = "resources"
+
+[[Menu.Main]]
+    name = "Podcasts"
+    identifier = "podcasts"
+    url = "/podcasts"
+    parent = "resources"
+
+[[Menu.Main]]
+    name = "Books"
+    identifier = "books"
+    url = "/books"
+    parent = "resources"
+
+[[Menu.Main]]
+    name = "Subscribe to Newsletter"
+    identifier = "bananastand"
+    url = "/bananastand"
+
+[[Menu.Main]]
+    name = "ADO FAQ"
+    identifier = "faq"
+    url = "/faq"
+
+[[Menu.Main]]
+    name = "ADO Supporters"
+    identifier = "thanks-pals"
+    url = "/thanks-pals"
+
 [params]
-  Facebook = "//facebook.com/Arresteddevops"
-  GATracker = "UA-45939822-1"
-  Twitter = "//twitter.com/arresteddevops"
-  Description = "Arrested DevOps is hosted by Matt Stratton, Trevor Hess, and Bridget Kromhout. ADO is the podcast that helps you achieve understanding, develop good practices, and operate your team and organization for maximum DevOps awesomeness."
+  copyright_notice = "Copyright 2014 - 2017 Arrested DevOps"
+  itunes_subscribe = "http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"
+  android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
+  google_play_subscribe = "https://goo.gl/app/playmusic?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Ihj4yege3lfmp3vs5yoopgxijpi?t%3DArrested_DevOps"
+  mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
+  description = "Arrested DevOps is hosted by Matt Stratton, Trevor Hess, and Bridget Kromhout. ADO is the podcast that helps you achieve understanding, develop good practices, and operate your team and organization for maximum DevOps awesomeness."
+
+    [params.feed]
+    feed_copyright = "Copyright 2014 - 2017 Arrested DevOps" #do not use markdown in this field; it is used in the feed
+    itunes_subtitle = "here's always DevOps in the Banana Stand" #no markdown or HTML
+    itunes_author = "Matt Stratton, Trevor Hess, and Bridget Kromhout" #no markdown or HTML
+    itunes_summary = "Arrested DevOps is the podcast that helps you achieve understanding, develop good practices, and operate your team and organization for maximum DevOps awesomeness." # Limited to 4000 characters or less, plain text, no HTML
+    itunes_owner_name = "Matt Stratton"
+    itunes_owner_email = "matt.stratton@gmail.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on iTunes. It will not be publicly displayed on iTunes.
+    itunes_image = "https://www.arresteddevops.com/img/ado-podcast-logo.png" #fqdn to the image art for your podcast
+    itunes_top_category = "Technology"
+    itunes_first_sub_category = "Software How-To"
+    itunes_second_sub_category = "Tech News"
+
   	[params.social]
   		github = "arresteddevops"
   		facebook = "Arresteddevops"

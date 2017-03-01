@@ -1,0 +1,22 @@
+// over-ride variables here
+/* Coolors Exported Palette - coolors.co/252323-70798c-f5f1ed-9197ae-5b2333 */
+
+/* RGB */
+$color1:                      rgba(37, 35, 35, 1);
+$color2:                      rgba(112, 121, 140, 1);
+$color3:                      rgba(245, 241, 237, 1);
+$color4:                      rgba(145, 151, 174, 1);
+$color5:                      rgba(91, 35, 51, 1);
+
+$body-bg:                     $color3;
+$body-color:                  $color1;
+
+$brand-primary:               $color5;
+$dropdown-bg:                 $color4;
+$dropdown-border-color:       $color4;
+$dropdown-link-color:         $color3;
+$dropdown-link-hover-color:   $color3;
+$dropdown-link-hover-bg:      $color4;
+$navbar-light-color:          $color3;
+$navbar-light-hover-color:    $color5;
+$navbar-light-active-color:   $color5;
