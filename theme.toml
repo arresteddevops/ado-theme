@@ -9,7 +9,7 @@ homepage = "https://github.com/arresteddevops/ado-theme"
 tags = []
 features = []
 min_version = 0.19
-theme_version = 0.1.0
+theme_version = 0.1.1
 
 
 [author]

@@ -2,29 +2,37 @@ sudo: false
 language: node_js
 node_js:
 - '6'
+
 env:
 - CXX=g++-4.8
+
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+
 before_script:
 - npm install -g gulp
 - npm install
 - cd exampleSite
+
 script:
 - "$TRAVIS_BUILD_DIR/bin/hugo version"
 - "$TRAVIS_BUILD_DIR/bin/hugo"
+
 before_deploy:
 - cd $TRAVIS_BUILD_DIR
 - mkdir -p release
 - zip -r release/ado-theme-$TRAVIS_TAG.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.travis.ci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*bower_components\* bower.json gulpfile.js netlify.toml package.json *\node_modules\*
+
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: mzNMvkNuCMOIbeJT3VXYgjHg2QvEVdNnZza0emQdxTIlfWybC1FQmMVVOc/6sHcmaCST6fngNG/TbplWPnMX/asyai08+te4wvbVaGTtvV47TCCi/anrTDEQtMedPM+KDfbceizzYfMAROUvNC26hoUiC0BMSvO62TEXNL+UBewDJuMfDWKimERLnCkF+jbZx1JIHzfd+0rLuLtajTn0v4fEHgyyHiiQalR57IhMeGDIeHyMd40tqNQX5f2uKV/UuE+B8bUHTG/+soK3Y4vW3YVsc6MFuzaJhpF9BSRZSdjrs6qtoKDECdMpltF6YsY6A9EhVAL3g1CVwriWgGNHqF4ZcKP6ucER1+vyU2nZkObmsijzjAhGeyQq7UGehxsKF/eYMRgW5QwA7Y/3FLptc6cyh2TkAdCxrqIxcA9pf58qSQFrKLj9hNZAFjyHjASap5EKC7lJ2rZ9Q8UWn8XT+NHUAl9TXyiDwj83W9lwcux6Swox/MhLLHhAP/ZwOMhYBE6Ew/4WUvki1W4p3nAXdbOZZ3Zfnme+ZpfK+3xkw/G1lqheX05FPdXlgQANuOgf7KUAOY4DCs4ypMMqEV1bOKV7tQd0ZieA2eOR/nTYXhSudd7Jb7lPn3gh10Y8iLFR5ry7xEgBl7YduwAw0FQ7W8SGosU+lKbxltq2VaCrL0c=
   file: 'release/ado-theme-$TRAVIS_TAG.zip'
   on:
     repo: arresteddevops/ado-theme
+    tags: true
