@@ -15,12 +15,23 @@ body {
 }
 
 a.subscribe-button {
-  background-color: $color3;
-  color: $color1;;
+  background-color: $color5;
+  color: #fff;
+  font-size: .75em;
+  width: 225px;
 }
 
 div.subscribe-button {
   margin-top: 10px
+}
+
+@media only screen and (min-width: 768px) {
+  a.subscribe-button {
+    width: 300px;
+    font-size: 1em;
+  }
+
+
 }
 
 .episode-list-header {
@@ -34,4 +45,8 @@ div.episode-list-header {
 
 h2.episode-list-header {
   margin-bottom: 0;
+}
+
+.pagination {
+  margin-top: 10px;
 }
